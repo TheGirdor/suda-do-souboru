@@ -1,0 +1,21 @@
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+int main ()
+{ 
+  int i;
+  FILE *sou;                                                                          // rekne mu ze se pracuje se souborem
+  sou = fopen ("C:\\Users\\PC\\Desktop\\School\\Stredni\\C++\\suda.txt","w");         // otevre, w rekne zapisovani
+  fprintf (sou,"Suda cisla z intervalu 1-100:");                                      // napise do souboru text v uvozovkach
+  for(i=1;i<=100;i++)                                                                 // spusti cyklus
+  {
+   if (i%2==0)                                                                        // podminka jestli je i delitelne 2 a zbytek je 0
+   fprintf (sou, " %d", i);                                                           // pokud je splnena, zapise cislo %d urci ze ma psat cislo
+  }
+  fclose(sou);                                                                        // uzavre program
+  printf ("Suda cisla zapsana do souboru...");                                        // vypise do konzole text v uvozovkach
+ 
+system("PAUSE > NUL");
+return 0;
+}
